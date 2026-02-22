@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
 import ScrollReveal from '@/components/ScrollReveal'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = { title: 'ISR — About' }
 
@@ -45,6 +46,22 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal>
               <p>Several decisions emanated from the meeting. Firstly it would be a good idea to share information and learn from each other. Also, to set up guidelines for the collection of spinal surgery data in an organised way that would allow analysis of each other&#39;s data sets without any inconsistency.</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="content-section">
+        <div className="container">
+          <div className="prose">
+            <ScrollReveal>
+              <h2 className="section-heading">Get in Touch</h2>
+            </ScrollReveal>
+            <ScrollReveal delay={1}>
+              <p>If you would like to learn more about ISR, get involved, or have any questions, please send us a message using the form below.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={2}>
+              <ContactForm />
             </ScrollReveal>
           </div>
         </div>
