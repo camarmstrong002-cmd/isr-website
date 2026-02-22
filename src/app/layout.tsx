@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { fraunces, dmSans } from '@/lib/fonts'
+import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import './globals.css'
 
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${fraunces.variable} ${dmSans.variable}`}>
       <body>
+        <Nav />
         {children}
         <Footer />
       </body>
