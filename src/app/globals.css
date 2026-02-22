@@ -241,8 +241,7 @@ a { color: inherit; text-decoration: none; }
 
 .page-hero {
   background: var(--navy);
-  padding: var(--sp-10) 0 var(--sp-8);
-  margin-top: 64px;
+  padding: calc(64px + var(--sp-10)) 0 var(--sp-8);
   position: relative;
   overflow: hidden;
 }
@@ -1196,7 +1195,7 @@ a { color: inherit; text-decoration: none; }
   .pillars-grid, .c-grid, .e-grid { grid-template-columns: 1fr; }
   .purpose-grid { grid-template-columns: 1fr; }
   /* Sub-pages */
-  .page-hero { padding: var(--sp-8) 0 var(--sp-7); }
+  .page-hero { padding: calc(64px + var(--sp-8)) 0 var(--sp-7); }
   .card-grid { grid-template-columns: 1fr; }
   .people-grid { grid-template-columns: 1fr; }
   .member-grid { grid-template-columns: 1fr; }
