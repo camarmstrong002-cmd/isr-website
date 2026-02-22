@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const body = await request.json()
     const type = body?._type
     if (type) {
-      revalidateTag(type)
+      revalidateTag(type, "default")
     }
     return NextResponse.json({ revalidated: true })
   } catch {
