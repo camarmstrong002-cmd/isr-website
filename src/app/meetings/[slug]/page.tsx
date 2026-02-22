@@ -17,7 +17,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const meeting = getMeetingBySlug(slug)
   if (!meeting) return { title: 'Meeting Not Found' }
-  return { title: `ISR — ${meeting.title}` }
+  return {
+    title: `ISR — ${meeting.title}`,
+    description: meeting.description,
+  }
 }
 
 export default async function MeetingPage({ params }: PageProps) {

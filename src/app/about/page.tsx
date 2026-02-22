@@ -3,7 +3,10 @@ import PageHero from '@/components/PageHero'
 import ScrollReveal from '@/components/ScrollReveal'
 import ContactForm from '@/components/ContactForm'
 
-export const metadata: Metadata = { title: 'ISR — About' }
+export const metadata: Metadata = {
+  title: 'ISR — About',
+  description: 'Learn about the International Spine Registries, our history, and how global spinal registries collaborate.',
+}
 
 export default function AboutPage() {
   return (

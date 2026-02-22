@@ -3,7 +3,10 @@ import PageHero from '@/components/PageHero'
 import MemberItem from '@/components/MemberItem'
 import ScrollReveal from '@/components/ScrollReveal'
 
-export const metadata: Metadata = { title: 'ISR — Member Organisations' }
+export const metadata: Metadata = {
+  title: 'ISR — Member Organisations',
+  description: 'Browse the international and national spinal registries that make up the ISR member network.',
+}
 
 const internationalMembers = ['Spine Tango']
 

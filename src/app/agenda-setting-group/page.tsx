@@ -3,7 +3,10 @@ import PageHero from '@/components/PageHero'
 import PersonCard from '@/components/PersonCard'
 import ScrollReveal from '@/components/ScrollReveal'
 
-export const metadata: Metadata = { title: 'ISR — Agenda Setting Group' }
+export const metadata: Metadata = {
+  title: 'ISR — Agenda Setting Group',
+  description: 'Meet the Agenda Setting Group driving ISR strategy, with representatives from leading global spinal registries.',
+}
 
 const members = [
   {

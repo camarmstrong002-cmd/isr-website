@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'ISR — Meetings',
+  description: 'Past and upcoming ISR meetings at international spine conferences including EUROSPINE.',
 }
 
 export default function MeetingsPage() {

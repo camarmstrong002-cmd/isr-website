@@ -2,7 +2,10 @@ import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
 import ScrollReveal from '@/components/ScrollReveal'
 
-export const metadata: Metadata = { title: 'ISR — Library' }
+export const metadata: Metadata = {
+  title: 'ISR — Library',
+  description: 'ISR publications, position statements, and reference documents on spinal registry standards.',
+}
 
 export default function LibraryPage() {
   return (
