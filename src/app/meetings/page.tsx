@@ -20,13 +20,21 @@ export default function MeetingsPage() {
         <div className="container">
           <ScrollReveal>
             <p>
-              <strong>Next Meeting:</strong> At Eurospine in Copenhagen, October
-              21st–25th October 2025.
+              <strong>Next Meeting:</strong> At Eurospine in Gothenburg, 6th
+              October 2026.
             </p>
           </ScrollReveal>
 
           <div className="card-grid">
             <ScrollReveal delay={1}>
+              <Card
+                title="Copenhagen 2025"
+                description="EUROSPINE Annual Meeting — 21st–25th October 2025, Copenhagen."
+                href="/meetings/copenhagen-2025"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal delay={2}>
               <Card
                 title="Vienna 2024"
                 description="EUROSPINE Annual Meeting — 3rd & 4th October 2024. Reed Messe Wien Exhibition & Congress Centre."
@@ -34,7 +42,7 @@ export default function MeetingsPage() {
               />
             </ScrollReveal>
 
-            <ScrollReveal delay={2}>
+            <ScrollReveal delay={3}>
               <Card
                 title="Frankfurt 2023"
                 description="EUROSPINE Annual Meeting — 5th & 6th October 2023. Messe Frankfurt."
@@ -42,7 +50,7 @@ export default function MeetingsPage() {
               />
             </ScrollReveal>
 
-            <ScrollReveal delay={3}>
+            <ScrollReveal delay={4}>
               <Card
                 title="London 2022"
                 description="1st International Meeting of Spinal Registries — March 2023 at the Royal National Orthopaedic Hospital, Stanmore."

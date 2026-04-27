@@ -21,7 +21,7 @@ export default function Home() {
                 <h1>International<br />Spine Registries</h1>
               </ScrollReveal>
               <ScrollReveal delay={1}>
-                <p className="hero-subtitle">Welcome to the Website of the International Spine Registries (ISR)!</p>
+                <p className="hero-subtitle">Welcome to the Website of the International Spine Registries</p>
               </ScrollReveal>
               <ScrollReveal delay={2}>
                 <div className="hero-actions">

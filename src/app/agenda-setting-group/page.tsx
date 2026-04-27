@@ -1,7 +1,13 @@
+import { existsSync } from 'node:fs'
+import path from 'node:path'
 import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
 import PersonCard from '@/components/PersonCard'
 import ScrollReveal from '@/components/ScrollReveal'
+
+function resolvePhoto(photo: string): string | undefined {
+  return existsSync(path.join(process.cwd(), 'public', photo)) ? photo : undefined
+}
 
 export const metadata: Metadata = {
   title: 'ISR — Agenda Setting Group',
@@ -13,61 +19,73 @@ const members = [
     name: 'Jarkko Halme',
     role: 'Finland',
     bio: '',
+    photo: '/agenda/jarkko-halme.jpg',
   },
   {
     name: 'Emin Aghayev',
     role: 'Switzerland',
     bio: '',
+    photo: '/agenda/emin-aghayev.jpg',
   },
   {
     name: 'Mr Ashley Cole',
     role: 'BMedSci, FRCS(Tr & Orth), DM',
     bio: 'Consultant Orthopaedic Spine Surgeon, Sheffield Children\u2019s Hospital. Ashley Cole is a Consultant Orthopaedic Spine Surgeon working at Sheffield Children\u2019s and Northern General Hospitals, Sheffield from 2003.',
+    photo: '/agenda/ashley-cole.jpg',
   },
   {
     name: 'Peter Fritzell',
     role: 'Sweden',
     bio: '',
+    photo: '/agenda/peter-fritzell.jpg',
   },
   {
     name: 'Tore Solberg',
     role: 'Norway',
     bio: '',
+    photo: '/agenda/tore-solberg.jpg',
   },
   {
     name: 'Professor Sashin Ahuja',
     role: 'FRCS (Tr&Orth)',
     bio: 'Consultant Orthopaedic Spinal Surgeon, Welsh Centre for Spinal Surgery & Trauma University Hospital of Wales & Noah\u2019s Ark Children\u2019s Hospital for Wales, Cardiff. Co-Chair of the Spine ODEP & BC. Chair of the UK Spine Societies Board (UKSSB).',
+    photo: '/agenda/sashin-ahuja.jpg',
   },
   {
     name: 'Bjorn Knutsson',
     role: 'Sweden',
     bio: '',
+    photo: '/agenda/bjorn-knutsson.jpg',
   },
   {
     name: 'Olle Hagg',
     role: 'Sweden',
     bio: '',
+    photo: '/agenda/olle-hagg.jpg',
   },
   {
     name: 'Marina Torre',
     role: 'MEng, Senior Researcher — Italian National Institute of Health (ISS)',
     bio: 'Specialising in medical devices, particularly orthopaedics. She led CE marking for hip prostheses (NB 0373, 1997\u20132004) and has coordinated 28 national health data projects since 2002. Since 2021, she oversees ISS\u2019s international collaborations with the UK\u2019s NJR and EUROSPINE to develop shared databases on orthopaedic and spinal implants. She has served on ethics and advisory boards including NORE and ISAR.',
+    photo: '/agenda/marina-torre.jpg',
   },
   {
     name: 'Josh Bridgens',
     role: 'Industry',
     bio: '',
+    photo: '/agenda/josh-bridgens.jpg',
   },
   {
     name: 'Michael Johnson',
     role: 'Australia',
     bio: '',
+    photo: '/agenda/michael-johnson.jpg',
   },
   {
     name: 'Esther Apos',
     role: 'Australia',
     bio: '',
+    photo: '/agenda/esther-apos.jpg',
   },
 ]
 
@@ -133,7 +151,7 @@ export default function AgendaSettingGroupPage() {
           <div className="people-grid">
             {members.map((m) => (
               <ScrollReveal key={m.name}>
-                <PersonCard name={m.name} role={m.role} bio={m.bio} />
+                <PersonCard name={m.name} role={m.role} bio={m.bio} photo={resolvePhoto(m.photo)} />
               </ScrollReveal>
             ))}
           </div>

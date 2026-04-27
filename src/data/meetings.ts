@@ -30,6 +30,15 @@ export interface Meeting {
 
 export const meetings: Meeting[] = [
   {
+    slug: 'copenhagen-2025',
+    title: 'Copenhagen 2025',
+    date: '21st–25th October 2025',
+    location: 'Copenhagen, Denmark',
+    venue: 'EUROSPINE Annual Meeting',
+    description:
+      'Meeting of the International Spinal Registries (ISR) at EUROSPINE — 21st–25th October 2025, Copenhagen.',
+  },
+  {
     slug: 'vienna-2024',
     title: 'Vienna 2024',
     date: '3rd & 4th October 2024',
