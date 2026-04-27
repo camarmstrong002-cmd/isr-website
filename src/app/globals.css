@@ -262,16 +262,26 @@ a { color: inherit; text-decoration: none; }
 .page-hero h1 {
   font-family: var(--font-display);
   font-weight: 400;
+  font-variation-settings: "opsz" 144;
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   line-height: 1.1;
+  letter-spacing: -0.015em;
   color: var(--text-on-dark);
-  margin-bottom: var(--sp-4);
+  margin: 0 auto var(--sp-4);
+  max-width: 740px;
 }
 .page-hero p {
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 1.55;
   color: var(--text-on-dark-secondary);
-  max-width: 600px;
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-hero .overline {
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* === CONTENT SECTIONS === */
@@ -281,10 +291,13 @@ a { color: inherit; text-decoration: none; }
 .section-heading {
   font-family: var(--font-display);
   font-weight: 400;
+  font-variation-settings: "opsz" 144;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   line-height: 1.2;
+  letter-spacing: -0.015em;
   color: var(--navy);
-  margin-bottom: var(--sp-5);
+  margin: 0 auto var(--sp-5);
+  max-width: 740px;
 }
 
 /* === PROSE === */
@@ -294,6 +307,8 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.6;
   color: var(--text-secondary);
   max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .prose p { margin-bottom: var(--sp-4); }
 .prose p:last-child { margin-bottom: 0; }
