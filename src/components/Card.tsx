@@ -1,8 +1,18 @@
 import Link from 'next/link'
 
-export default function Card({ title, description, href }: { title: string; description: string; href: string }) {
+export default function Card({
+  title,
+  description,
+  href,
+  featured = false,
+}: {
+  title: string
+  description: string
+  href: string
+  featured?: boolean
+}) {
   return (
-    <Link href={href} className="card">
+    <Link href={href} className={featured ? 'card card--featured' : 'card'}>
       <h3>{title}</h3>
       <p>{description}</p>
       <span className="card-arrow">

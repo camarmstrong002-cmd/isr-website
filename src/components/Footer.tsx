@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 International Spine Registries</p>
+          <p>&copy; 2026 International Spine Registries</p>
           <p>Conceived by ODEP</p>
         </div>
       </div>
