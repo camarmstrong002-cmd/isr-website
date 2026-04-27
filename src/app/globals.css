@@ -246,7 +246,7 @@ a { color: inherit; text-decoration: none; }
 
 .page-hero {
   background: var(--navy);
-  padding: calc(64px + var(--sp-10)) 0 var(--sp-8);
+  padding: calc(64px + var(--sp-11)) 0 var(--sp-10);
   position: relative;
   overflow: hidden;
 }
@@ -261,18 +261,18 @@ a { color: inherit; text-decoration: none; }
 }
 .page-hero h1 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 350;
   font-variation-settings: "opsz" 144;
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   color: var(--text-on-dark);
-  margin: 0 auto var(--sp-4);
+  margin: 0 auto var(--sp-5);
   max-width: 740px;
 }
 .page-hero p {
-  font-size: 1.0625rem;
-  line-height: 1.55;
+  font-size: 1.125rem;
+  line-height: 1.5;
   color: var(--text-on-dark-secondary);
   max-width: 740px;
   margin-left: auto;
@@ -292,18 +292,18 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-display);
   font-weight: 400;
   font-variation-settings: "opsz" 144;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  line-height: 1.2;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.875rem, 3vw, 2.375rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: var(--navy);
-  margin: 0 auto var(--sp-5);
+  margin: 0 auto var(--sp-6);
   max-width: 740px;
 }
 
 /* === PROSE === */
 
 .prose {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--text-secondary);
   max-width: 740px;

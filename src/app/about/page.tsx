@@ -11,7 +11,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <PageHero title="About" subtitle="Understanding who we are and how we started" />
+      <PageHero
+        overline="International Spine Registries"
+        title="About"
+        subtitle="Understanding who we are and how we started."
+      />
 
       <section className="content-section">
         <div className="container">
