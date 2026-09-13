@@ -4,7 +4,7 @@ import PersonCard from '@/components/PersonCard'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'ISR — Agenda Setting Group',
+  title: 'Agenda Setting Group — International Spine Registries',
   description: 'Meet the Agenda Setting Group driving ISR strategy, with representatives from leading global spinal registries.',
 }
 
@@ -94,78 +94,60 @@ const facilitators = [
 
 export default function AgendaSettingGroupPage() {
   return (
-    <main>
+    <main id="content">
       <PageHero
-        overline="Leadership"
-        title="Agenda Setting Group"
-        subtitle="The core working group driving ISR's strategic direction and future meeting agendas."
+        overline="Agenda Setting Group"
+        title="A small group with deep registry experience, proposing policy to the rest"
+        subtitle="Formed after the Frankfurt meeting to develop ISR. Facilitated by ODEP and NEC Software Solutions."
       />
 
-      {/* Overview */}
-      <section className="content-section">
-        <div className="container">
-          <div className="prose">
-            <ScrollReveal>
-              <h2 className="section-heading">The Agenda Setting Group</h2>
-            </ScrollReveal>
-            <ScrollReveal delay={1}>
-              <p>The Agenda setting group was put together after the Frankfurt meeting in order to develop ISR. Its membership includes representatives of the well established registries and is facilitated by ODEP and NEC software solutions.</p>
-            </ScrollReveal>
-            <ScrollReveal delay={2}>
-              <p>It was reckoned that inviting all members to a committee that generated policy was going to be too complicated and therefore a limited number of people, all with significant registry experience should meet regularly and propose policy to the rest of the membership.</p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Members */}
-      <section className="content-section">
-        <div className="container">
+      <section className="section">
+        <div className="wrap">
           <ScrollReveal>
-            <h2 className="section-heading">Members</h2>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div className="prose">
-              <p>Emin Aghayev (Switzerland), Bjorn Knutsson and Peter Fritzell (Sweden), Marina Torre (Italy), Jarkko Halme (Finland), Sashin Ahuja (UK), Tore Solberg (Norway), Ashley Cole (UK), Esther Apos (Australia), Josh Bridgens (Industry), Keith Tucker (ODEP), Oge Swaby (NEC)</p>
+            <div className="split">
+              <div className="split-aside"><p className="label">Purpose</p><h2>Why a small group</h2></div>
+              <div className="prose">
+                <p>The Agenda Setting Group was put together after the Frankfurt meeting in order to develop ISR. Its membership includes representatives of the well-established registries and is facilitated by ODEP and NEC Software Solutions.</p>
+                <p>Inviting all members to a committee that generated policy was reckoned too complicated. Instead, a limited number of people, all with significant registry experience, meet regularly and propose policy to the rest of the membership.</p>
+              </div>
             </div>
           </ScrollReveal>
-
-          <div className="people-grid">
-            {members.map((m) => (
-              <ScrollReveal key={m.name}>
-                <PersonCard name={m.name} role={m.role} bio={m.bio} />
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Facilitators */}
-      <section className="content-section" style={{ background: 'var(--navy-04)' }}>
-        <div className="container">
+      <section className="section">
+        <div className="wrap">
           <ScrollReveal>
-            <h2 className="section-heading">Facilitators</h2>
+            <div className="section-head">
+              <p className="label">Members</p>
+              <h2>{members.length} representatives, {new Set(members.map((m) => m.role)).size} registries and organisations</h2>
+            </div>
+            <div className="people">
+              {members.map((m) => <PersonCard key={m.name} name={m.name} role={m.role} bio={m.bio} />)}
+            </div>
           </ScrollReveal>
+        </div>
+      </section>
 
-          <div className="people-grid">
-            {facilitators.map((f) => (
-              <ScrollReveal key={f.name}>
-                <div className="person-card" style={{ borderLeft: '3px solid var(--navy)' }}>
-                  <h3>{f.name}</h3>
-                  <p className="role">{f.role}</p>
-                  {f.paragraphs.map((p, i) => (
-                    <p key={i} style={i > 0 ? { marginTop: 'var(--sp-3)' } : undefined}>
-                      {p}
-                    </p>
-                  ))}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
+      <section className="section">
+        <div className="wrap">
           <ScrollReveal>
-            <div className="prose" style={{ marginTop: 'var(--sp-6)' }}>
-              <p><strong>Facilitators:</strong> Keith Tucker (ODEP) and Oge Swaby (NEC) act as facilitators and organise the meetings.</p>
+            <div className="section-head">
+              <p className="label">Facilitators</p>
+              <h2>Keith Tucker and Oge Swaby organise the meetings</h2>
+            </div>
+            <div className="people">
+              {facilitators.map((f) => (
+                <div className="person" key={f.name}>
+                  <div>
+                    <p className="person-name">{f.name}</p>
+                    <p className="person-role">{f.role}</p>
+                  </div>
+                  <div className="person-bio">
+                    {f.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+                  </div>
+                </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>

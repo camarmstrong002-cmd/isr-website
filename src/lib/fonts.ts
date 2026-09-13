@@ -1,14 +1,9 @@
-import { Fraunces, DM_Sans } from 'next/font/google'
+import { Schibsted_Grotesk } from 'next/font/google'
 
-export const fraunces = Fraunces({
+// One family, self-paired. Hierarchy comes from size, weight and colour only.
+export const schibsted = Schibsted_Grotesk({
   subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-  axes: ['opsz'],
-})
-
-export const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-body',
+  weight: ['400', '600', '700'],
+  variable: '--font-sans',
   display: 'swap',
 })

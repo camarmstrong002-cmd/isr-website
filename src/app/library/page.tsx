@@ -3,38 +3,47 @@ import PageHero from '@/components/PageHero'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'ISR — Library',
+  title: 'Library — International Spine Registries',
   description: 'ISR publications, position statements, and reference documents on spinal registry standards.',
 }
 
 export default function LibraryPage() {
   return (
-    <main>
-      <PageHero
-        overline="Resources"
-        title="Library"
-        subtitle="Publications, position statements, and reference documents."
-      />
+    <main id="content">
+      <PageHero overline="Library" title="Documents, presentations and position statements" subtitle="Key documents related to our work, including regulatory timelines and the three position statements." />
 
-      <section className="content-section">
-        <div className="container">
+      <section className="section">
+        <div className="wrap">
           <ScrollReveal>
-            <div className="prose">
-              <p>The ISR Library contains key documents and presentations related to our work, including regulatory timelines and position statements.</p>
+            <div className="split">
+              <div className="split-aside"><p className="label">Presentations</p><h2>Regulatory context</h2></div>
+              <div className="ledger">
+                <div className="ledger-row three">
+                  <span className="ledger-num num">2025</span>
+                  <div>
+                    <h3>MedTech Europe presentation</h3>
+                    <p className="meta">21 October 2025 · PDF</p>
+                  </div>
+                  <p>EUDAMED timeline, UDI and device registration timelines for spine implants, and the official roadmap from the European Commission.</p>
+                </div>
+              </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
 
-          <div className="card-grid">
-            <ScrollReveal>
-              <div className="card">
-                <h3>MedTech Europe Presentation</h3>
-                <p>2025_10_21_International Spinal Registries_MedTech Europe prez.pdf</p>
-                <p style={{ marginTop: 'var(--sp-3)', fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
-                  Includes EUDAMED timeline, UDI &amp; device registration timelines for spine implants, and official roadmap from European Commission.
-                </p>
+      <section className="section">
+        <div className="wrap">
+          <ScrollReveal>
+            <div className="split">
+              <div className="split-aside"><p className="label">Position statements</p><h2>Three documents from the Agenda Setting Group</h2></div>
+              <div className="ledger">
+                <div className="ledger-row three"><span className="ledger-num">01</span><div><h3>Minimum data set</h3><p className="meta">Presented by Jarkko Halme</p></div><p>The core fields every registry should collect, under the same headings.</p></div>
+                <div className="ledger-row three"><span className="ledger-num">02</span><div><h3>PROMs</h3><p className="meta">Presented by Peter Fritzell</p></div><p>Which patient-reported outcome measures to collect, and when.</p></div>
+                <div className="ledger-row three"><span className="ledger-num">03</span><div><h3>Implant collection</h3><p className="meta">Presented by Emin Aghayev</p></div><p>How implants should be recorded against a shared implant library.</p></div>
               </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </main>

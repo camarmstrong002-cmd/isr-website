@@ -1,72 +1,48 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
+const links = [
+  { href: '/about', label: 'About' },
+  { href: '/agenda-setting-group', label: 'Agenda Setting Group' },
+  { href: '/member-organisations', label: 'Members' },
+  { href: '/meetings', label: 'Meetings' },
+  { href: '/library', label: 'Library' },
+]
+
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const links = [
-    { href: '/', label: 'Home' },
-    { href: '/agenda-setting-group', label: 'Agenda Setting Group' },
-    { href: '/member-organisations', label: 'Member Organisations' },
-    { href: '/meetings', label: 'Meetings' },
-    { href: '/about', label: 'About' },
-    { href: '/library', label: 'Library' },
-  ]
-
   return (
-    <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="nav">
-      <div className="nav-inner">
-        <Link href="/" className="nav-logo">
-          <div className="nav-logo-icon">
-            <Image src="/isr-logo.png" alt="ISR" width={36} height={36} style={{ borderRadius: '50%' }} />
-          </div>
-          <span className="nav-logo-text">ISR</span>
+    <header className="nav">
+      <div className="wrap nav-inner">
+        <Link href="/" className="brand" aria-label="International Spine Registries, home">
+          <Image src="/isr-logo.png" alt="" width={28} height={28} priority />
+          <span className="brand-name">International Spine Registries</span>
+          <span className="brand-short">ISR</span>
         </Link>
-        <ul className={`nav-links${mobileOpen ? ' open' : ''}`}>
-          {links.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className={pathname === href ? 'active' : ''}
-                onClick={() => setMobileOpen(false)}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link href="/about" className="nav-cta" onClick={() => setMobileOpen(false)}>
-              Contact Us
-            </Link>
-          </li>
-        </ul>
+        <nav aria-label="Primary" className={`nav-links${open ? ' open' : ''}`}>
+          <ul>
+            {links.map(({ href, label }) => (
+              <li key={href}>
+                <Link href={href} onClick={() => setOpen(false)} aria-current={pathname.startsWith(href) ? 'page' : undefined}>{label}</Link>
+              </li>
+            ))}
+            <li className="nav-contact"><Link href="/about#contact" onClick={() => setOpen(false)}>Contact</Link></li>
+          </ul>
+        </nav>
         <button
-          className="mobile-toggle"
-          aria-label="Menu"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          className="nav-toggle"
+          aria-expanded={open}
+                    onClick={() => setOpen(!open)}
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
+          {open ? 'Close' : 'Menu'}
         </button>
       </div>
-    </nav>
+    </header>
   )
 }

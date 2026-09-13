@@ -41,8 +41,8 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="contact-form">
-        <div className="form-success">
+      <div className="form">
+        <div className="form-note">
           Thank you for your message. We&apos;ll be in touch soon.
         </div>
       </div>
@@ -50,9 +50,9 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate={false}>
+    <form className="form" onSubmit={handleSubmit} noValidate={false}>
       {status === 'error' && (
-        <div className="form-error">{errorMsg}</div>
+        <div className="form-note error">{errorMsg}</div>
       )}
 
       <div className="form-group">
@@ -96,7 +96,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <button type="submit" className="form-submit" disabled={status === 'loading'}>
+      <button type="submit" className="btn btn-primary" disabled={status === 'loading'}>
         {status === 'loading' ? 'Sending...' : 'Send Message'}
       </button>
     </form>

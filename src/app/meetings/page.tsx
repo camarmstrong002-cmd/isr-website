@@ -2,54 +2,33 @@ import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
 import Card from '@/components/Card'
 import ScrollReveal from '@/components/ScrollReveal'
+import { meetings } from '@/data/meetings'
 
 export const metadata: Metadata = {
-  title: 'ISR — Meetings',
+  title: 'Meetings — International Spine Registries',
   description: 'Past and upcoming ISR meetings at international spine conferences including EUROSPINE.',
 }
 
 export default function MeetingsPage() {
   return (
-    <main>
-      <PageHero
-        title="Meetings"
-        subtitle="ISR convenes at international spine conferences to advance collaborative registry standards."
-      />
+    <main id="content">
+      <PageHero overline="Meetings" title="ISR convenes where the spine community already gathers" subtitle="Each meeting is held alongside an international spine conference, with registry leads, surgeons, manufacturers and regulators in the room." />
 
-      <section className="content-section">
-        <div className="container">
+      <section className="section">
+        <div className="wrap">
           <ScrollReveal>
-            <p>
-              <strong>Next Meeting:</strong> At Eurospine in Copenhagen, October
-              21st–25th October 2025.
-            </p>
+            <div className="section-head">
+              <p className="label">Next meeting</p>
+              <h2>EUROSPINE, Copenhagen</h2>
+              <p className="lead">21st to 25th October 2025.</p>
+            </div>
+            <p className="label" style={{ marginBottom: 'var(--s4)' }}>Past meetings</p>
+            <div className="index">
+              {meetings.map((m) => (
+                <Card key={m.slug} meta={m.date} title={m.title} description={`${m.venue}, ${m.location}`} href={`/meetings/${m.slug}`} />
+              ))}
+            </div>
           </ScrollReveal>
-
-          <div className="card-grid">
-            <ScrollReveal delay={1}>
-              <Card
-                title="Vienna 2024"
-                description="EUROSPINE Annual Meeting — 3rd & 4th October 2024. Reed Messe Wien Exhibition & Congress Centre."
-                href="/meetings/vienna-2024"
-              />
-            </ScrollReveal>
-
-            <ScrollReveal delay={2}>
-              <Card
-                title="Frankfurt 2023"
-                description="EUROSPINE Annual Meeting — 5th & 6th October 2023. Messe Frankfurt."
-                href="/meetings/frankfurt-2023"
-              />
-            </ScrollReveal>
-
-            <ScrollReveal delay={3}>
-              <Card
-                title="London 2022"
-                description="1st International Meeting of Spinal Registries — March 2023 at the Royal National Orthopaedic Hospital, Stanmore."
-                href="/meetings/london-2022"
-              />
-            </ScrollReveal>
-          </div>
         </div>
       </section>
     </main>
