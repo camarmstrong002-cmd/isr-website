@@ -6,8 +6,10 @@ import ScrollReveal from '@/components/ScrollReveal'
 import { members, memberCount, countryCount, memberTypeLabel, MemberType } from '@/data/members'
 
 export const metadata: Metadata = {
-  title: 'Member Organisations — International Spine Registries',
-  description: 'The international and national spinal registries that make up the ISR member network.',
+  title: 'Member spine registries',
+  description: 'The international, national and non-national spine registries that make up the International Spine Registries (ISR) network, from the British Spine Registry to Spine Tango and Kaiser Permanente.',
+  alternates: { canonical: '/member-organisations' },
+  openGraph: { title: 'Member spine registries', description: 'The international, national and non-national spine registries that make up the International Spine Registries (ISR) network, from the British Spine Registry to Spine Tango and Kaiser Permanente.', url: '/member-organisations' },
 }
 
 const groups: { type: MemberType; heading: string }[] = [

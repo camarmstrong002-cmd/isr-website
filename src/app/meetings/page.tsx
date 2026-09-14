@@ -5,8 +5,10 @@ import ScrollReveal from '@/components/ScrollReveal'
 import { meetings } from '@/data/meetings'
 
 export const metadata: Metadata = {
-  title: 'Meetings — International Spine Registries',
-  description: 'Past and upcoming ISR meetings at international spine conferences including EUROSPINE.',
+  title: 'ISR meetings at EUROSPINE',
+  description: 'Past and upcoming International Spine Registries meetings, held alongside EUROSPINE: London 2023, Frankfurt 2023, Vienna 2024, Copenhagen 2025 and Gothenburg 2026.',
+  alternates: { canonical: '/meetings' },
+  openGraph: { title: 'ISR meetings at EUROSPINE', description: 'Past and upcoming International Spine Registries meetings, held alongside EUROSPINE: London 2023, Frankfurt 2023, Vienna 2024, Copenhagen 2025 and Gothenburg 2026.', url: '/meetings' },
 }
 
 export default function MeetingsPage() {

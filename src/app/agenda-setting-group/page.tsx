@@ -10,8 +10,10 @@ function resolvePhoto(photo: string): string | undefined {
 }
 
 export const metadata: Metadata = {
-  title: 'Agenda Setting Group — International Spine Registries',
-  description: 'Meet the Agenda Setting Group driving ISR strategy, with representatives from leading global spinal registries.',
+  title: 'Agenda Setting Group',
+  description: 'The Agenda Setting Group proposes ISR policy: registry leads from Europe, Australia and industry, facilitated by ODEP and NEC Software Solutions.',
+  alternates: { canonical: '/agenda-setting-group' },
+  openGraph: { title: 'Agenda Setting Group', description: 'The Agenda Setting Group proposes ISR policy: registry leads from Europe, Australia and industry, facilitated by ODEP and NEC Software Solutions.', url: '/agenda-setting-group' },
 }
 
 const members = [

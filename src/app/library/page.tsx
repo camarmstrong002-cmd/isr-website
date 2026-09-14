@@ -3,8 +3,10 @@ import PageHero from '@/components/PageHero'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Library — International Spine Registries',
-  description: 'ISR publications, position statements, and reference documents on spinal registry standards.',
+  title: 'Library: position statements and documents',
+  description: 'ISR position statements on the minimum data set, PROMs and implant collection, plus presentations and regulatory references for spine registries.',
+  alternates: { canonical: '/library' },
+  openGraph: { title: 'Library: position statements and documents', description: 'ISR position statements on the minimum data set, PROMs and implant collection, plus presentations and regulatory references for spine registries.', url: '/library' },
 }
 
 export default function LibraryPage() {

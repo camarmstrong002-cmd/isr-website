@@ -19,6 +19,9 @@ export interface Meeting {
   slug: string
   title: string
   date: string
+  /** ISO dates for structured data and sitemap */
+  startDate?: string
+  endDate?: string
   location: string
   venue: string
   description: string
@@ -33,6 +36,8 @@ export const meetings: Meeting[] = [
     slug: 'copenhagen-2025',
     title: 'Copenhagen 2025',
     date: '21st–25th October 2025',
+    startDate: '2025-10-21',
+    endDate: '2025-10-25',
     location: 'Copenhagen, Denmark',
     venue: 'EUROSPINE Annual Meeting',
     description:
@@ -42,6 +47,8 @@ export const meetings: Meeting[] = [
     slug: 'vienna-2024',
     title: 'Vienna 2024',
     date: '3rd & 4th October 2024',
+    startDate: '2024-10-03',
+    endDate: '2024-10-04',
     location: 'Vienna, Austria',
     venue: 'Reed Messe Wien Exhibition & Congress Centre',
     description:
@@ -100,6 +107,8 @@ export const meetings: Meeting[] = [
     slug: 'frankfurt-2023',
     title: 'Frankfurt 2023',
     date: '5th & 6th October 2023',
+    startDate: '2023-10-05',
+    endDate: '2023-10-06',
     location: 'Frankfurt, Germany',
     venue: 'Messe Frankfurt',
     description:
@@ -149,6 +158,7 @@ export const meetings: Meeting[] = [
     slug: 'london-2022',
     title: 'London 2022',
     date: 'March 2023',
+    startDate: '2023-03',
     location: 'London, United Kingdom',
     venue: 'Royal National Orthopaedic Hospital, Stanmore',
     description:

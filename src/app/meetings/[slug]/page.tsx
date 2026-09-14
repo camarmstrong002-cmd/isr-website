@@ -4,6 +4,7 @@ import PageHero from '@/components/PageHero'
 import AgendaItem from '@/components/AgendaItem'
 import ScrollReveal from '@/components/ScrollReveal'
 import { getMeetingBySlug, getAllMeetingSlugs } from '@/data/meetings'
+import { SITE_URL, SITE_NAME } from '@/lib/site'
 
 interface PageProps { params: Promise<{ slug: string }> }
 
@@ -15,7 +16,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const meeting = getMeetingBySlug(slug)
   if (!meeting) return { title: 'Meeting not found' }
-  return { title: `${meeting.title} — International Spine Registries`, description: meeting.description }
+  const title = `${meeting.title}: ISR meeting in ${meeting.location}`
+  return {
+    title,
+    description: meeting.description,
+    alternates: { canonical: `/meetings/${slug}` },
+    openGraph: { title, description: meeting.description, url: `/meetings/${slug}` },
+  }
 }
 
 export default async function MeetingPage({ params }: PageProps) {
@@ -23,8 +30,23 @@ export default async function MeetingPage({ params }: PageProps) {
   const meeting = getMeetingBySlug(slug)
   if (!meeting) notFound()
 
+  const eventJsonLd = meeting.startDate && meeting.startDate.length === 10 ? {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: `International Spine Registries meeting, ${meeting.title}`,
+    description: meeting.description,
+    startDate: meeting.startDate,
+    endDate: meeting.endDate ?? meeting.startDate,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: { '@type': 'Place', name: meeting.venue, address: meeting.location },
+    organizer: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    url: `${SITE_URL}/meetings/${meeting.slug}`,
+  } : null
+
   return (
     <main id="content">
+      {eventJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }} />}
       <PageHero overline={`${meeting.date} · ${meeting.location}`} title={meeting.title} subtitle={meeting.description} />
 
       {(meeting.invitees || meeting.during) && (

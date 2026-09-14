@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import RecordCard from '@/components/RecordCard'
@@ -5,9 +6,10 @@ import MemberItem from '@/components/MemberItem'
 import { members, memberCount, countryCount, memberTypeLabel } from '@/data/members'
 import { meetings } from '@/data/meetings'
 
-export const metadata = {
-  title: 'International Spine Registries',
-  description: 'The world’s national spine registries are collaborating on a shared minimum data set, common patient-reported outcomes, and a unified implant library.',
+export const metadata: Metadata = {
+  title: 'International Spine Registries (ISR): one language for the world’s spinal data',
+  description: 'The world’s national spine registries are collaborating on a shared minimum data set, common patient-reported outcome measures and a unified implant library, so spinal implant outcomes can be compared across borders.',
+  alternates: { canonical: '/' },
 }
 
 const Check = () => (

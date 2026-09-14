@@ -4,8 +4,10 @@ import ScrollReveal from '@/components/ScrollReveal'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'About — International Spine Registries',
-  description: 'Who the International Spine Registries are, how the alliance started, and how to get in touch.',
+  title: 'About ISR',
+  description: 'Who the International Spine Registries (ISR) are: a voluntary alliance of the world’s spine registries, conceived by ODEP in 2023 and supported by NEC Software Solutions. How it started and how to get in touch.',
+  alternates: { canonical: '/about' },
+  openGraph: { title: 'About ISR', description: 'Who the International Spine Registries (ISR) are: a voluntary alliance of the world’s spine registries, conceived by ODEP in 2023 and supported by NEC Software Solutions. How it started and how to get in touch.', url: '/about' },
 }
 
 export default function AboutPage() {
