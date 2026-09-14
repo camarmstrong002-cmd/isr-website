@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function LibraryPage() {
   return (
     <main id="content">
-      <PageHero overline="Library" title="Documents, presentations and position statements" subtitle="Key documents related to our work, including regulatory timelines and the three position statements." />
+      <PageHero overline="Library" title="Documents, presentations and position statements" subtitle="A growing collection of citation-ready documents: position statements ratified by the Agenda Setting Group, presentations from ISR meetings, and references on the regulatory landscape that shapes our work." />
 
       <section className="section">
         <div className="wrap">
@@ -21,8 +21,8 @@ export default function LibraryPage() {
                 <div className="ledger-row three">
                   <span className="ledger-num num">2025</span>
                   <div>
-                    <h3>MedTech Europe presentation</h3>
-                    <p className="meta">21 October 2025 · PDF</p>
+                    <h3>International Spinal Registries — MedTech Europe</h3>
+                    <p className="meta">Presentation · 21 October 2025 · PDF, available on request</p>
                   </div>
                   <p>EUDAMED timeline, UDI and device registration timelines for spine implants, and the official roadmap from the European Commission.</p>
                 </div>

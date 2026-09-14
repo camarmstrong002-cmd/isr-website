@@ -19,8 +19,8 @@ export default function MeetingsPage() {
           <ScrollReveal>
             <div className="section-head">
               <p className="label">Next meeting</p>
-              <h2>EUROSPINE, Copenhagen</h2>
-              <p className="lead">21st to 25th October 2025.</p>
+              <h2>EUROSPINE, Gothenburg</h2>
+              <p className="lead">6th October 2026.</p>
             </div>
             <p className="label" style={{ marginBottom: 'var(--s4)' }}>Past meetings</p>
             <div className="index">

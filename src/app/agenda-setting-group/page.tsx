@@ -1,7 +1,13 @@
+import { existsSync } from 'node:fs'
+import path from 'node:path'
 import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
 import PersonCard from '@/components/PersonCard'
 import ScrollReveal from '@/components/ScrollReveal'
+
+function resolvePhoto(photo: string): string | undefined {
+  return existsSync(path.join(process.cwd(), 'public', photo)) ? photo : undefined
+}
 
 export const metadata: Metadata = {
   title: 'Agenda Setting Group — International Spine Registries',
@@ -11,61 +17,73 @@ export const metadata: Metadata = {
 const members = [
   {
     name: 'Jarkko Halme',
+    photo: '/agenda/jarkko-halme.jpg',
     role: 'Finland',
     bio: '',
   },
   {
     name: 'Emin Aghayev',
+    photo: '/agenda/emin-aghayev.jpg',
     role: 'Switzerland',
     bio: '',
   },
   {
     name: 'Mr Ashley Cole',
+    photo: '/agenda/ashley-cole.jpg',
     role: 'BMedSci, FRCS(Tr & Orth), DM',
     bio: 'Consultant Orthopaedic Spine Surgeon, Sheffield Children\u2019s Hospital. Ashley Cole is a Consultant Orthopaedic Spine Surgeon working at Sheffield Children\u2019s and Northern General Hospitals, Sheffield from 2003.',
   },
   {
     name: 'Peter Fritzell',
+    photo: '/agenda/peter-fritzell.jpg',
     role: 'Sweden',
     bio: '',
   },
   {
     name: 'Tore Solberg',
+    photo: '/agenda/tore-solberg.jpg',
     role: 'Norway',
     bio: '',
   },
   {
     name: 'Professor Sashin Ahuja',
+    photo: '/agenda/sashin-ahuja.jpg',
     role: 'FRCS (Tr&Orth)',
     bio: 'Consultant Orthopaedic Spinal Surgeon, Welsh Centre for Spinal Surgery & Trauma University Hospital of Wales & Noah\u2019s Ark Children\u2019s Hospital for Wales, Cardiff. Co-Chair of the Spine ODEP & BC. Chair of the UK Spine Societies Board (UKSSB).',
   },
   {
     name: 'Bjorn Knutsson',
+    photo: '/agenda/bjorn-knutsson.jpg',
     role: 'Sweden',
     bio: '',
   },
   {
     name: 'Olle Hagg',
+    photo: '/agenda/olle-hagg.jpg',
     role: 'Sweden',
     bio: '',
   },
   {
     name: 'Marina Torre',
+    photo: '/agenda/marina-torre.jpg',
     role: 'MEng, Senior Researcher — Italian National Institute of Health (ISS)',
     bio: 'Specialising in medical devices, particularly orthopaedics. She led CE marking for hip prostheses (NB 0373, 1997\u20132004) and has coordinated 28 national health data projects since 2002. Since 2021, she oversees ISS\u2019s international collaborations with the UK\u2019s NJR and EUROSPINE to develop shared databases on orthopaedic and spinal implants. She has served on ethics and advisory boards including NORE and ISAR.',
   },
   {
     name: 'Josh Bridgens',
+    photo: '/agenda/josh-bridgens.jpg',
     role: 'Industry',
     bio: '',
   },
   {
     name: 'Michael Johnson',
+    photo: '/agenda/michael-johnson.jpg',
     role: 'Australia',
     bio: '',
   },
   {
     name: 'Esther Apos',
+    photo: '/agenda/esther-apos.jpg',
     role: 'Australia',
     bio: '',
   },
@@ -120,10 +138,10 @@ export default function AgendaSettingGroupPage() {
           <ScrollReveal>
             <div className="section-head">
               <p className="label">Members</p>
-              <h2>{members.length} representatives, {new Set(members.map((m) => m.role)).size} registries and organisations</h2>
+              <h2>{members.length} representatives from the established registries, industry and ODEP</h2>
             </div>
             <div className="people">
-              {members.map((m) => <PersonCard key={m.name} name={m.name} role={m.role} bio={m.bio} />)}
+              {members.map((m) => <PersonCard key={m.name} name={m.name} role={m.role} bio={m.bio} photo={resolvePhoto(m.photo)} />)}
             </div>
           </ScrollReveal>
         </div>
